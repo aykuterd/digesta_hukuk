@@ -75,6 +75,15 @@ header{position:sticky;top:0;z-index:20;background:var(--bone)}
 }
 .serit .eylem:hover{background:var(--cinnabar);color:var(--bone)}
 @media (max-width:860px){.serit nav{display:none}}
+.mobil-yol{display:none}
+@media (max-width:860px){
+  .mobil-yol{display:flex;flex-wrap:wrap;gap:8px 20px;margin:26px 0 0;
+    padding-top:16px;border-top:1px solid var(--rule)}
+  .mobil-yol a{font-family:var(--caps);font-size:12px;font-weight:600;
+    letter-spacing:.14em;text-indent:.14em;text-transform:uppercase;
+    color:var(--ink-2);text-decoration:none}
+  .mobil-yol a:hover{color:var(--cinnabar)}
+}
 
 /* ── cetvel: sayfanın omurgası ── */
 .gövde{position:relative}
@@ -82,7 +91,10 @@ header{position:sticky;top:0;z-index:20;background:var(--bone)}
   content:"";position:absolute;left:0;top:0;bottom:0;
   border-left:1px solid var(--rule);
 }
-.blok{position:relative;padding:0 0 0 clamp(24px,7vw,86px)}
+.gövde{--girinti:clamp(24px,7vw,86px)}
+.blok{position:relative;padding:0 0 0 var(--girinti)}
+/* bölümler arası nefes: rubriğin üstünde altından çok boşluk olsun */
+section.blok:not(.acilis){padding-top:clamp(40px,5.5vw,64px)}
 
 /* açılış */
 .acilis{padding-top:clamp(38px,6vw,72px);padding-bottom:clamp(40px,6vw,66px)}
@@ -137,6 +149,19 @@ header{position:sticky;top:0;z-index:20;background:var(--bone)}
   vertical-align:.28em;font-variant-numeric:tabular-nums;
   padding:0 .5px;
 }
+.verif.yok{color:var(--bronze);font-style:italic;text-transform:none;
+  font-family:var(--serif);font-size:14.5px;letter-spacing:0;text-indent:0}
+.karsit{
+  border-top:1px solid var(--rule);margin-top:26px;padding-top:22px;
+  max-width:64ch;
+}
+.karsit .etiket{
+  font-family:var(--caps);font-size:11px;letter-spacing:.22em;
+  text-indent:.22em;text-transform:uppercase;color:var(--bronze);
+  display:block;margin-bottom:14px;
+}
+.karsit .rubrik{font-size:16px;margin-bottom:12px}
+.karsit .metin{font-size:16px;line-height:1.7;color:var(--ink-2)}
 .verif{
   grid-column:1;font-family:var(--caps);font-size:11.5px;font-weight:600;
   letter-spacing:.16em;text-indent:.16em;text-transform:uppercase;
@@ -175,10 +200,16 @@ header{position:sticky;top:0;z-index:20;background:var(--bone)}
   color:var(--bronze);margin:0 0 6px;
 }
 .istasyon{
+  position:relative;
   display:grid;grid-template-columns:2.6rem minmax(0,34ch) minmax(0,1fr);
   gap:0 30px;align-items:start;
-  padding:30px 0;border-top:1px solid var(--rule);
+  /* cetvele kadar geri çekilir: yatay çizgi dikey cetvele değsin, istasyon
+     ona asılı dursun — kenarda duran bir çizgi form değil, süs olurdu */
+  margin-left:calc(-1 * var(--girinti));
+  padding:30px 0 30px var(--girinti);
+  border-top:1px solid var(--rule);
 }
+.istasyon .nisan{top:-4.5px}
 .istasyon .no{
   font-family:var(--caps);font-size:14px;font-weight:600;
   letter-spacing:.06em;color:var(--cinnabar);
@@ -217,7 +248,7 @@ header{position:sticky;top:0;z-index:20;background:var(--bone)}
 /* ── külliyat ölçüsü ── */
 .olcu{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));
-  gap:26px 34px;border-top:1px solid var(--rule);padding:26px 0 0;margin-top:4px;
+  gap:26px 34px;border-top:1px solid var(--rule);padding:26px 0 6px;margin-top:4px;
 }
 .kul-baslik{max-width:26ch;font-size:clamp(20px,2.6vw,26px)}
 .kul-giris{max-width:56ch;color:var(--ink-2);margin:0 0 26px}
@@ -263,6 +294,7 @@ header{position:sticky;top:0;z-index:20;background:var(--bone)}
   letter-spacing:-.005em;margin:0 0 12px;max-width:20ch;text-wrap:balance;
 }
 .kayit p{margin:0 0 22px;color:var(--ink-2);max-width:54ch;font-size:16.5px}
+.kayit .usul{font-size:15px;color:var(--bronze);font-style:italic;max-width:56ch}
 form{display:flex;flex-wrap:wrap;gap:12px;align-items:stretch;max-width:560px}
 input[type=email]{
   flex:1 1 260px;font:16px/1 var(--serif);color:var(--ink);
@@ -365,6 +397,11 @@ finish review, the verdict, and DESIGN.md
       <a class="dugme" href="#erken">Erken erişim listesi</a>
       <span class="yan-not">Yayına hazırlanıyor · avukatlar için</span>
     </div>
+    <nav class="mobil-yol" aria-label="Sayfa bölümleri">
+      <a href="#nasil">Nasıl çalışır</a>
+      <a href="#kulliyat">Külliyat</a>
+      <a href="#fiyat">Fiyat</a>
+    </nav>
 
     <div class="folio ac g4">
       <p class="etiket">Örnek folio — gerçek külliyat metniyle</p>
@@ -400,6 +437,16 @@ finish review, the verdict, and DESIGN.md
         </dl>
       </aside>
     </div>
+
+    <div class="karsit">
+      <span class="etiket">Kaynak bulunamadığında</span>
+      <p class="rubrik">Müvekkilim kripto varlığını miras olarak bırakabilir mi?
+        Tereke nasıl paylaştırılır?</p>
+      <p class="metin">Külliyatta bu soruyu karşılayan bir hüküm ya da karar
+        bulunamadı. Cevap üretilir, ancak <b>kaynağa bağlanamadığı için
+        doğrulanmamış olarak damgalanır</b>: metin size gelir, güvence gelmez.</p>
+      <p class="verif yok">— doğrulanmış kaynak atfı yok, ihtiyatla değerlendirin —</p>
+    </div>
   </section>
 
   <!-- ── istasyonlar: avukatın iş günü ── -->
@@ -408,6 +455,7 @@ finish review, the verdict, and DESIGN.md
     <p class="bolum-basi">Bir dosyanın yolu</p>
 
     <div class="istasyon">
+      <span class="nisan" aria-hidden="true"></span>
       <div class="no">I</div>
       <div>
         <h3>Soruyu sor</h3>
@@ -424,6 +472,7 @@ finish review, the verdict, and DESIGN.md
     </div>
 
     <div class="istasyon">
+      <span class="nisan" aria-hidden="true"></span>
       <div class="no">II</div>
       <div>
         <h3>Emsal ara</h3>
@@ -443,6 +492,7 @@ finish review, the verdict, and DESIGN.md
     </div>
 
     <div class="istasyon">
+      <span class="nisan" aria-hidden="true"></span>
       <div class="no">III</div>
       <div>
         <h3>Dilekçe taslağını çıkar</h3>
@@ -458,6 +508,7 @@ finish review, the verdict, and DESIGN.md
     </div>
 
     <div class="istasyon">
+      <span class="nisan" aria-hidden="true"></span>
       <div class="no">IV</div>
       <div>
         <h3>Sözleşmeyi incelet</h3>
@@ -473,6 +524,7 @@ finish review, the verdict, and DESIGN.md
     </div>
 
     <div class="istasyon">
+      <span class="nisan" aria-hidden="true"></span>
       <div class="no">V</div>
       <div>
         <h3>Süreyi hesapla</h3>
@@ -491,7 +543,6 @@ finish review, the verdict, and DESIGN.md
   <!-- ── külliyat ── -->
   <section class="blok" id="kulliyat">
     <span class="nisan" aria-hidden="true"></span>
-    <p class="bolum-basi">Külliyat</p>
     <h2 class="rubrik kul-baslik">
       Mevzuat kendiliğinden güncel kalır.</h2>
     <p class="kul-giris">
@@ -540,6 +591,9 @@ finish review, the verdict, and DESIGN.md
     <h2>Yayına girdiğinde ilk siz haberdar olun</h2>
     <p>Digesta şu anda kapalı denemede. Adresinizi bırakın; açıldığında tek bir
       e-posta göndereceğiz. Başka hiçbir şey için kullanılmaz.</p>
+    <p class="usul">Bu sitenin sunucusu yok: “Haber ver” dediğinizde adresiniz
+      kendi posta programınızda hazır bir iletiye konur, göndermesi size kalır.
+      Böylece adresiniz araya giren hiçbir servise uğramaz.</p>
     <form id="kayitForm" novalidate>
       <label for="eposta" class="gizli">E-posta adresiniz</label>
       <input type="email" id="eposta" name="eposta" placeholder="ornek@buro.av.tr"
@@ -547,6 +601,10 @@ finish review, the verdict, and DESIGN.md
       <button type="submit">Haber ver</button>
     </form>
     <p class="durum" id="durum" role="status" aria-live="polite"></p>
+    <noscript>
+      <p class="durum"><a href="mailto:destek@digesta.com.tr?subject=Digesta%20erken%20eri%C5%9Fim">
+        destek@digesta.com.tr adresine yazın</a> — tarayıcınızda JavaScript kapalı.</p>
+    </noscript>
 
     <p class="ihtar">
       <b>Digesta hukuki danışmanlık vermez.</b> Ürettiği metinler bir meslek
