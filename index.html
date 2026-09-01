@@ -104,6 +104,9 @@ section.blok:not(.acilis){padding-top:clamp(40px,5.5vw,64px)}
   letter-spacing:-.012em;margin:0 0 22px;max-width:15ch;
   text-wrap:balance;
 }
+@media (max-width:700px){
+  .acilis h1{text-wrap:pretty;max-width:none}
+}
 .acilis .tez{
   font-size:clamp(18px,2.1vw,21px);line-height:1.55;
   color:var(--ink-2);max-width:52ch;margin:0 0 30px;
@@ -294,7 +297,7 @@ section.blok:not(.acilis){padding-top:clamp(40px,5.5vw,64px)}
   letter-spacing:-.005em;margin:0 0 12px;max-width:20ch;text-wrap:balance;
 }
 .kayit p{margin:0 0 22px;color:var(--ink-2);max-width:54ch;font-size:16.5px}
-.kayit .usul{font-size:15px;color:var(--bronze);font-style:italic;max-width:56ch}
+.kayit .usul{font-size:16.5px;color:var(--ink);max-width:58ch}
 form{display:flex;flex-wrap:wrap;gap:12px;align-items:stretch;max-width:560px}
 input[type=email]{
   flex:1 1 260px;font:16px/1 var(--serif);color:var(--ink);
@@ -451,7 +454,6 @@ finish review, the verdict, and DESIGN.md
 
   <!-- ── istasyonlar: avukatın iş günü ── -->
   <section class="blok istasyonlar" id="nasil">
-    <span class="nisan" aria-hidden="true"></span>
     <p class="bolum-basi">Bir dosyanın yolu</p>
 
     <div class="istasyon">
