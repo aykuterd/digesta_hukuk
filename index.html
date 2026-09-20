@@ -1,621 +1,464 @@
 <!doctype html>
 <html lang="tr">
+<!--
+Digesta Legal Intelligence — tanıtım sayfası. Uygulamayla aynı tasarım sistemi
+(Plus Jakarta Sans + Inter, obsidiyen/zümrüt/bronz, hairline kenarlık).
+İçerik yalnız gerçek ürün davranışını anlatır: uydurma istatistik, müşteri
+yorumu ya da referans logosu YOKTUR. Yeni bir rakam eklemeden önce
+doğrulayın (kanun/parça sayısı, fiyatlar).
+-->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Digesta — Türk hukuku külliyatı</title>
+<title>Digesta — Türk hukuku için doğrulanmış yapay zekâ</title>
 <meta name="description" content="Türk mevzuatı ve içtihadı üzerinde çalışan araştırma aracı. Her hukuki tespit gerçek madde metnine bağlanır, atıf sunucuda doğrulanır.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' rx='12' fill='%230F172A'/%3E%3Cpath d='M26 14V38' stroke='%2310B981' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M17 20H35' stroke='%23F8FAFC' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M17 20L13 28C13 31 21 31 21 28L17 20Z' fill='%2310B981' fill-opacity='.2' stroke='%2310B981' stroke-width='1.8'/%3E%3Cpath d='M35 20L31 28C31 31 39 31 39 28L35 20Z' fill='%2310B981' fill-opacity='.2' stroke='%2310B981' stroke-width='1.8'/%3E%3Ccircle cx='26' cy='14' r='2.5' fill='%23F59E0B'/%3E%3Cpath d='M20 38H32' stroke='%23F8FAFC' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..500,0..1,0&display=block">
 <style>
 :root{
-  --bone:#f2ede3; --bone-2:#ece5d7;
-  --ink:#1c1917; --ink-2:#4c463e;
-  --cinnabar:#b0301c; --bronze:#766748;
-  --rule:#c9bda6;
-  --caps:"Cinzel","Times New Roman",serif;
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --surface:#f7f9fb; --surface-2:#f2f4f6; --surface-3:#eceef0; --card:#ffffff;
+  --ink:#0f172a; --ink-2:#475569; --muted:#64748b; --faint:#94a3b8;
+  --rule:#e2e8f0; --rule-2:#cbd5e1;
+  --primary:#0f172a; --on-primary:#ffffff; --primary-hover:#1e293b;
+  --secondary:#065f46; --secondary-hover:#044e39; --on-secondary:#ffffff;
+  --accent:#10b981; --secondary-soft:#ecfdf5; --secondary-line:#6ee7b7;
+  --secondary-container:#a6f2d1; --on-secondary-container:#237157;
+  --bronze-t:#b45309; --bronze-soft:#fffbeb; --bronze-line:#fcd34d;
+  --risk:#991b1b; --risk-soft:#fef2f2; --risk-line:#f87171;
+  --sh-1:0 1px 3px 0 rgba(15,23,42,.04),0 1px 2px -1px rgba(15,23,42,.03);
+  --sh-2:0 10px 15px -3px rgba(15,23,42,.08),0 4px 6px -4px rgba(15,23,42,.03);
+  --sh-3:0 20px 25px -5px rgba(15,23,42,.12),0 8px 10px -6px rgba(15,23,42,.04);
+  --r-sm:4px; --r:8px; --r-lg:12px;
+  --head:"Plus Jakarta Sans",system-ui,sans-serif;
+  --body:"Inter",system-ui,sans-serif;
   color-scheme:light dark;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bone:#191512; --bone-2:#211c17;
-    --ink:#e9e2d4; --ink-2:#b3a892;
-    --cinnabar:#d95a40; --bronze:#9a8a68;
-    --rule:#453c30;
-  }
-}
-:root[data-theme="dark"]{
-  --bone:#191512; --bone-2:#211c17;
-  --ink:#e9e2d4; --ink-2:#b3a892;
-  --cinnabar:#d95a40; --bronze:#9a8a68;
-  --rule:#453c30;
-}
-
+@media (prefers-color-scheme:dark){:root{
+  --surface:#0b1220; --surface-2:#0f172a; --surface-3:#1a2438; --card:#111a2c;
+  --ink:#e2e8f0; --ink-2:#a3b1c6; --muted:#8393aa; --faint:#64748b;
+  --rule:#243049; --rule-2:#33425e;
+  --primary:#e2e8f0; --on-primary:#0f172a; --primary-hover:#ffffff;
+  --secondary:#34d399; --secondary-hover:#6ee7b7; --on-secondary:#052e22;
+  --accent:#34d399; --secondary-soft:#0d2a24; --secondary-line:#0f5a45;
+  --secondary-container:#0f3d31; --on-secondary-container:#a6f2d1;
+  --bronze-t:#fbbf24; --bronze-soft:#2a2010; --bronze-line:#6b4f12;
+  --risk:#f87171; --risk-soft:#2b1416; --risk-line:#7f1d1d;
+  --sh-1:0 1px 3px rgba(0,0,0,.4); --sh-2:0 10px 15px -3px rgba(0,0,0,.5);
+  --sh-3:0 20px 25px -5px rgba(0,0,0,.6);
+}}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{
-  margin:0;background:var(--bone);color:var(--ink);
-  font:17px/1.65 var(--serif);
-  -webkit-font-smoothing:antialiased;
-}
-:focus-visible{outline:2px solid var(--cinnabar);outline-offset:3px}
-a{color:var(--cinnabar)}
-
-.kap{max-width:1080px;margin:0 auto;padding:0 28px}
-
-/* ── imza: çift cetvel ── */
-.cift{border-top:2px solid var(--ink);position:relative}
-.cift::after{
-  content:"";position:absolute;left:0;right:0;top:3px;
-  border-top:1px solid var(--rule);
-}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--surface);color:var(--ink);font:16px/26px var(--body);
+  -webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--secondary);outline-offset:2px}
+.ms{font-family:"Material Symbols Outlined";font-weight:400;font-style:normal;
+  font-size:22px;line-height:1;display:inline-block;width:1em;height:1em;
+  overflow:hidden;white-space:nowrap;flex:none;vertical-align:middle;
+  font-feature-settings:"liga"}
+.kap{width:min(1120px,100% - 48px);margin:0 auto}
+.gizli{position:absolute;left:-9999px}
 
 /* ── üst şerit ── */
-header{position:sticky;top:0;z-index:20;background:var(--bone)}
-.serit{
-  display:flex;align-items:baseline;justify-content:space-between;
-  gap:20px;padding:15px 0 13px;border-bottom:1px solid var(--rule);
-}
-.marka{
-  font-family:var(--caps);font-weight:600;font-size:19px;
-  letter-spacing:.30em;text-indent:.30em;color:var(--ink);
-  text-decoration:none;white-space:nowrap;
-}
-.serit nav{display:flex;gap:26px;align-items:baseline;font-size:14.5px}
-.serit nav a{color:var(--ink-2);text-decoration:none}
-.serit nav a:hover{color:var(--cinnabar)}
-.serit .eylem{
-  font-family:var(--caps);font-size:12.5px;font-weight:600;
-  letter-spacing:.16em;text-indent:.16em;text-transform:uppercase;
-  color:var(--cinnabar);text-decoration:none;
-  border:1px solid var(--cinnabar);padding:8px 15px;white-space:nowrap;
-}
-.serit .eylem:hover{background:var(--cinnabar);color:var(--bone)}
-@media (max-width:860px){.serit nav{display:none}}
-.mobil-yol{display:none}
-@media (max-width:860px){
-  .mobil-yol{display:flex;flex-wrap:wrap;gap:8px 20px;margin:26px 0 0;
-    padding-top:16px;border-top:1px solid var(--rule)}
-  .mobil-yol a{font-family:var(--caps);font-size:12px;font-weight:600;
-    letter-spacing:.14em;text-indent:.14em;text-transform:uppercase;
-    color:var(--ink-2);text-decoration:none}
-  .mobil-yol a:hover{color:var(--cinnabar)}
-}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surface) 88%,transparent);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--rule)}
+.serit{display:flex;align-items:center;gap:32px;height:64px}
+.marka{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marka svg{width:32px;height:32px;display:block}
+.marka b{font:800 18px/1 var(--head);letter-spacing:-.01em}
+.marka i{display:block;font:600 9px/1 var(--body);font-style:normal;letter-spacing:.2em;
+  color:var(--secondary);margin-top:4px}
+header nav{display:flex;gap:28px;margin-left:auto}
+header nav a{font:500 14px/22px var(--body);color:var(--ink-2);text-decoration:none}
+header nav a:hover{color:var(--ink)}
+.dugme{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font:600 14px/22px var(--body);padding:10px 20px;border-radius:var(--r);
+  background:var(--primary);color:var(--on-primary);text-decoration:none;border:0;
+  cursor:pointer;transition:background .18s}
+.dugme:hover{background:var(--primary-hover)}
+.dugme.yesil{background:var(--secondary);color:var(--on-secondary)}
+.dugme.yesil:hover{background:var(--secondary-hover)}
+.dugme.hayalet{background:transparent;color:var(--ink);border:1px solid var(--rule-2)}
+.dugme.hayalet:hover{background:var(--surface-3)}
+.dugme .ms{font-size:18px}
 
-/* ── cetvel: sayfanın omurgası ── */
-.gövde{position:relative}
-.gövde::before{
-  content:"";position:absolute;left:0;top:0;bottom:0;
-  border-left:1px solid var(--rule);
-}
-.gövde{--girinti:clamp(24px,7vw,86px)}
-.blok{position:relative;padding:0 0 0 var(--girinti)}
-/* bölümler arası nefes: rubriğin üstünde altından çok boşluk olsun */
-section.blok:not(.acilis){padding-top:clamp(40px,5.5vw,64px)}
+/* ── ortak ── */
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;
+  font:600 11px/14px var(--body);letter-spacing:.05em;text-transform:uppercase;
+  background:var(--secondary-container);color:var(--on-secondary-container)}
+.chip.bronz{background:var(--bronze-soft);color:var(--bronze-t);border:1px solid var(--bronze-line)}
+.chip .ms{font-size:14px}
+section{padding:88px 0}
+.bolum-bas{text-align:center;max-width:720px;margin:0 auto 48px}
+.bolum-bas .ust{font:600 12px/16px var(--body);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--secondary);margin-bottom:12px}
+h2{font:700 32px/40px var(--head);letter-spacing:-.015em;margin:0 0 12px}
+.bolum-bas p{margin:0;color:var(--ink-2)}
 
-/* açılış */
-.acilis{padding-top:clamp(38px,6vw,72px);padding-bottom:clamp(40px,6vw,66px)}
-.acilis h1{
-  font-family:var(--caps);font-weight:600;
-  font-size:clamp(30px,5.4vw,55px);line-height:1.13;
-  letter-spacing:-.012em;margin:0 0 22px;max-width:15ch;
-  text-wrap:balance;
-}
-@media (max-width:700px){
-  .acilis h1{text-wrap:pretty;max-width:none}
-}
-.acilis .tez{
-  font-size:clamp(18px,2.1vw,21px);line-height:1.55;
-  color:var(--ink-2);max-width:52ch;margin:0 0 30px;
-}
-.acilis .tez b{color:var(--ink);font-weight:600}
-.giris-eylem{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
-.dugme{
-  font-family:var(--caps);font-size:13px;font-weight:600;
-  letter-spacing:.17em;text-indent:.17em;text-transform:uppercase;
-  background:var(--cinnabar);color:var(--bone);text-decoration:none;
-  padding:13px 26px;border:1px solid var(--cinnabar);display:inline-block;
-  transition:background .18s cubic-bezier(.2,.7,.3,1);
-}
-.dugme:hover{background:transparent;color:var(--cinnabar)}
-.yan-not{font-size:14.5px;color:var(--bronze);font-style:italic}
+/* ── açılış ── */
+.acilis{padding:72px 0 40px;text-align:center}
+.acilis .chip{margin-bottom:24px}
+h1{font:800 clamp(34px,5.4vw,56px)/1.08 var(--head);letter-spacing:-.025em;
+  max-width:16ch;margin:0 auto 20px}
+h1 em{font-style:normal;color:var(--secondary)}
+.tez{max-width:60ch;margin:0 auto 32px;font-size:18px;line-height:28px;color:var(--ink-2)}
+.tez b{color:var(--ink);font-weight:600}
+.giris-eylem{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.yan-not{display:block;margin-top:16px;font-size:13px;color:var(--muted)}
 
-/* rubrik nişanı: cetvel üzerindeki kırmızı işaret */
-.nisan{
-  position:absolute;left:0;top:0;transform:translateX(-50%);
-  width:9px;height:9px;background:var(--cinnabar);
-}
-.nisan.acik{background:var(--bone);border:1px solid var(--cinnabar)}
+/* ürün penceresi: uygulamanın sohbet ekranı, gerçek külliyat metniyle */
+.pencere{margin:56px auto 0;max-width:980px;background:var(--card);border:1px solid var(--rule);
+  border-radius:var(--r-lg);box-shadow:var(--sh-3);overflow:hidden;text-align:left}
+.pencere .bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--surface-2);
+  border-bottom:1px solid var(--rule)}
+.pencere .bar i{width:10px;height:10px;border-radius:50%;background:var(--rule-2)}
+.pencere .bar span{margin-left:8px;font:500 12px/16px var(--body);color:var(--muted)}
+.folio{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;padding:24px}
+.soru{justify-self:end;max-width:88%;background:var(--primary);color:var(--on-primary);
+  font:400 14px/22px var(--body);padding:14px 20px;border-radius:12px 12px 2px 12px;margin:0 0 16px}
+.folio>div:first-child{display:grid}
+.cevap{background:var(--card);border:1px solid var(--rule);border-radius:var(--r-lg);
+  box-shadow:var(--sh-1);padding:20px 24px;font-size:14px;line-height:24px}
+.cevap p{margin:0 0 12px}.cevap p:last-child{margin:0}
+.cevap b{font-weight:600}
+.atif{color:var(--secondary);font-weight:700}
+.verif{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:4px 10px;
+  border-radius:999px;background:var(--secondary-container);color:var(--on-secondary-container);
+  font:600 11px/14px var(--body);justify-self:start}
+.verif.yok{background:var(--bronze-soft);color:var(--bronze-t);border:1px solid var(--bronze-line)}
+.glossa{display:grid;gap:10px;align-content:start}
+.glossa h4{margin:0;font:600 16px/24px var(--head);display:flex;align-items:center;gap:8px}
+.madde{background:var(--card);border:1px solid var(--rule);border-radius:var(--r-lg);
+  box-shadow:var(--sh-1);padding:12px 14px;font-size:13px;line-height:20px;color:var(--ink-2)}
+.madde .no{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;
+  margin-right:8px;background:var(--secondary);color:var(--on-secondary);border-radius:var(--r-sm);
+  font:700 12px/1 var(--body)}
+.madde strong{display:block;color:var(--ink);font-weight:600;margin:6px 0 2px}
 
-/* ── folio: ürünün kendini gösterdiği yer ── */
-.folio{
-  display:grid;grid-template-columns:minmax(0,64ch) 232px;
-  gap:0 34px;border-top:1px solid var(--rule);
-  padding-top:26px;margin-top:8px;
-}
-.folio .etiket{
-  grid-column:1/-1;font-family:var(--caps);font-size:11px;
-  letter-spacing:.22em;text-indent:.22em;text-transform:uppercase;
-  color:var(--bronze);margin-bottom:16px;
-}
-.rubrik{
-  font-family:var(--caps);font-weight:600;font-size:17.5px;line-height:1.42;
-  color:var(--cinnabar);margin:0 0 16px;
-}
-.folio .metin{margin:0;font-size:16.5px;line-height:1.72}
-.folio .metin p{margin:0 0 13px}
-.atif{
-  color:var(--cinnabar);font-weight:600;font-size:.82em;
-  vertical-align:.28em;font-variant-numeric:tabular-nums;
-  padding:0 .5px;
-}
-.verif.yok{color:var(--bronze);font-style:italic;text-transform:none;
-  font-family:var(--serif);font-size:14.5px;letter-spacing:0;text-indent:0}
-.karsit{
-  border-top:1px solid var(--rule);margin-top:26px;padding-top:22px;
-  max-width:64ch;
-}
-.karsit .etiket{
-  font-family:var(--caps);font-size:11px;letter-spacing:.22em;
-  text-indent:.22em;text-transform:uppercase;color:var(--bronze);
-  display:block;margin-bottom:14px;
-}
-.karsit .rubrik{font-size:16px;margin-bottom:12px}
-.karsit .metin{font-size:16px;line-height:1.7;color:var(--ink-2)}
-.verif{
-  grid-column:1;font-family:var(--caps);font-size:11.5px;font-weight:600;
-  letter-spacing:.16em;text-indent:.16em;text-transform:uppercase;
-  color:var(--cinnabar);margin-top:8px;padding-top:11px;
-  border-top:1px solid var(--rule);
-}
-.glossa{
-  grid-column:2;grid-row:2/span 3;align-self:start;
-  font-size:13.5px;line-height:1.52;color:var(--ink-2);
-  border-left:1px solid var(--rule);padding-left:16px;
-}
-.glossa h4{
-  font-family:var(--caps);font-size:10.5px;font-weight:600;
-  letter-spacing:.18em;text-indent:.18em;text-transform:uppercase;
-  color:var(--bronze);margin:0 0 11px;
-}
-.glossa dl{margin:0}
-.glossa dt{
-  font-variant-numeric:tabular-nums;color:var(--cinnabar);
-  font-weight:600;font-size:12.5px;
-}
-.glossa dd{margin:1px 0 13px;}
-.glossa dd em{font-style:normal;color:var(--ink);display:block}
-@media (max-width:900px){
-  .folio{grid-template-columns:minmax(0,1fr)}
-  .glossa{grid-column:1;grid-row:auto;border-left:none;padding-left:0;
-    border-top:1px solid var(--rule);padding-top:15px;margin-top:20px}
-  .verif{grid-column:1}
-}
+/* ── iki yüz: doğrulanmış / doğrulanmamış ── */
+.karsit{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:980px;margin:0 auto}
+.kart{background:var(--card);border:1px solid var(--rule);border-radius:var(--r-lg);
+  box-shadow:var(--sh-1);padding:24px}
+.kart h3{font:600 18px/26px var(--head);margin:12px 0 8px}
+.kart p{margin:0;color:var(--ink-2);font-size:14px;line-height:22px}
+.kart p b{color:var(--ink);font-weight:600}
+.kart.dik{border-top:3px solid var(--secondary)}
+.kart.uyari{border-top:3px solid var(--bronze-t)}
+.kart .ornek{margin:14px 0 0;padding:12px 14px;background:var(--surface);border-radius:var(--r);
+  font-size:13px;line-height:20px;color:var(--ink-2)}
+.kart .ornek .verif{margin-top:0}
+
+/* ── rakam bandı ── */
+.bant{background:var(--card);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:40px 0}
+.rakamlar{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.rakam{font:800 40px/48px var(--head);letter-spacing:-.02em}
+.rakam-ad{font-size:14px;color:var(--ink-2)}
 
 /* ── istasyonlar ── */
-.istasyonlar{padding-bottom:20px}
-.bolum-basi{
-  font-family:var(--caps);font-size:11.5px;font-weight:600;
-  letter-spacing:.22em;text-indent:.22em;text-transform:uppercase;
-  color:var(--bronze);margin:0 0 6px;
-}
-.istasyon{
-  position:relative;
-  display:grid;grid-template-columns:2.6rem minmax(0,34ch) minmax(0,1fr);
-  gap:0 30px;align-items:start;
-  /* cetvele kadar geri çekilir: yatay çizgi dikey cetvele değsin, istasyon
-     ona asılı dursun — kenarda duran bir çizgi form değil, süs olurdu */
-  margin-left:calc(-1 * var(--girinti));
-  padding:30px 0 30px var(--girinti);
-  border-top:1px solid var(--rule);
-}
-.istasyon .nisan{top:-4.5px}
-.istasyon .no{
-  font-family:var(--caps);font-size:14px;font-weight:600;
-  letter-spacing:.06em;color:var(--cinnabar);
-  font-variant-numeric:tabular-nums;padding-top:2px;
-}
-.istasyon h3{
-  font-family:var(--caps);font-weight:600;font-size:19px;
-  letter-spacing:.02em;margin:0 0 9px;line-height:1.3;
-}
-.istasyon p{margin:0;color:var(--ink-2);font-size:16px;line-height:1.62}
-.istasyon .kanit{
-  font-size:14.5px;line-height:1.6;color:var(--ink);
-  background:var(--bone-2);padding:15px 17px;
-  border-top:2px solid var(--ink);position:relative;
-}
-.istasyon .kanit::after{
-  content:"";position:absolute;left:0;right:0;top:3px;
-  border-top:1px solid var(--rule);
-}
-.kanit .bas{
-  font-family:var(--caps);font-size:10.5px;font-weight:600;
-  letter-spacing:.18em;text-indent:.18em;text-transform:uppercase;
-  color:var(--bronze);display:block;margin:6px 0 9px;
-}
-.kanit ul{margin:0;padding-left:17px}
-.kanit li{margin:5px 0}
-.kanit li::marker{color:var(--cinnabar)}
-.kanit .sayi{
-  font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);
-}
-@media (max-width:820px){
-  .istasyon{grid-template-columns:2.2rem minmax(0,1fr);gap:0 18px}
-  .istasyon .kanit{grid-column:2;margin-top:16px}
-}
+.izgara{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ozellik{background:var(--card);border:1px solid var(--rule);border-radius:var(--r-lg);
+  box-shadow:var(--sh-1);padding:28px;display:grid;gap:12px;align-content:start}
+.ozellik .ikon{width:44px;height:44px;border-radius:var(--r-lg);display:grid;place-items:center;
+  background:color-mix(in srgb,var(--secondary) 10%,transparent);color:var(--secondary)}
+.ozellik .no{font:600 11px/14px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ozellik h3{margin:0;font:700 20px/28px var(--head);letter-spacing:-.01em}
+.ozellik>p{margin:0;color:var(--ink-2);font-size:15px;line-height:24px}
+.kanit{margin-top:4px;padding:14px 16px;background:var(--surface);border-left:3px solid var(--secondary);
+  border-radius:0 var(--r) var(--r) 0;font-size:13px;line-height:21px;color:var(--ink-2)}
+.kanit .bas{display:block;font:600 11px/14px var(--body);letter-spacing:.05em;
+  text-transform:uppercase;color:var(--secondary);margin-bottom:6px}
+.kanit ul{margin:0 0 6px;padding-left:18px}
+.kanit b{color:var(--ink);font-weight:600}
+.ozellik:last-child:nth-child(odd){grid-column:1/-1}
 
-/* ── külliyat ölçüsü ── */
-.olcu{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));
-  gap:26px 34px;border-top:1px solid var(--rule);padding:26px 0 6px;margin-top:4px;
-}
-.kul-baslik{max-width:26ch;font-size:clamp(20px,2.6vw,26px)}
-.kul-giris{max-width:56ch;color:var(--ink-2);margin:0 0 26px}
-.gizli{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.olcu .rakam{
-  font-family:var(--caps);font-weight:600;font-size:clamp(27px,3.6vw,36px);
-  line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;
-}
-.olcu .ad{
-  font-size:14.5px;color:var(--ink-2);margin-top:7px;line-height:1.45;
-}
+/* ── külliyat ── */
+.kul{max-width:760px;margin:0 auto;text-align:center}
+.kul .ust{font:600 12px/16px var(--body);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--secondary);margin-bottom:12px}
+.kul p{color:var(--ink-2);font-size:17px;line-height:28px;margin:0}
 
 /* ── fiyat ── */
-.fiyat{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:0;border-top:1px solid var(--rule);margin-top:6px;
-}
-.berat{padding:26px 28px 28px 0;border-right:1px solid var(--rule)}
-.berat:last-child{border-right:none;padding-right:0}
-.berat .ad{
-  font-family:var(--caps);font-size:12px;font-weight:600;
-  letter-spacing:.2em;text-indent:.2em;text-transform:uppercase;
-  color:var(--bronze);margin-bottom:12px;
-}
-.berat .bedel{
-  font-family:var(--caps);font-weight:600;font-size:31px;line-height:1;
-  color:var(--ink);font-variant-numeric:tabular-nums;
-}
-.berat .bedel small{
-  font-family:var(--serif);font-size:15px;font-weight:400;
-  color:var(--ink-2);letter-spacing:0;
-}
-.berat p{margin:11px 0 0;font-size:15px;color:var(--ink-2);line-height:1.55}
-@media (max-width:700px){
-  .berat{border-right:none;border-bottom:1px solid var(--rule);padding-right:0}
-  .berat:last-child{border-bottom:none}
-}
+.fiyat{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:980px;margin:0 auto}
+.berat{background:var(--card);border:1px solid var(--rule);border-radius:var(--r-lg);
+  box-shadow:var(--sh-1);padding:28px;display:grid;gap:8px;align-content:start}
+.berat.one{border-color:var(--secondary);box-shadow:var(--sh-2)}
+.berat .ad{font:600 12px/16px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.berat .bedel{font:800 36px/44px var(--head);letter-spacing:-.02em}
+.berat .bedel small{font:500 14px/20px var(--body);color:var(--muted);letter-spacing:0}
+.berat p{margin:0;color:var(--ink-2);font-size:14px;line-height:22px}
 
-/* ── erken erişim ── */
-.kayit{border-top:1px solid var(--rule);padding:34px 0 0;margin-top:6px}
-.kayit h2{
-  font-family:var(--caps);font-weight:600;font-size:clamp(23px,3vw,30px);
-  letter-spacing:-.005em;margin:0 0 12px;max-width:20ch;text-wrap:balance;
-}
-.kayit p{margin:0 0 22px;color:var(--ink-2);max-width:54ch;font-size:16.5px}
-.kayit .usul{font-size:16.5px;color:var(--ink);max-width:58ch}
-form{display:flex;flex-wrap:wrap;gap:12px;align-items:stretch;max-width:560px}
-input[type=email]{
-  flex:1 1 260px;font:16px/1 var(--serif);color:var(--ink);
-  background:var(--bone-2);border:1px solid var(--rule);
-  padding:13px 15px;border-radius:0;
-}
-input[type=email]::placeholder{color:var(--bronze);opacity:1}
-input[type=email]:focus{border-color:var(--cinnabar);outline:none}
-button{
-  font-family:var(--caps);font-size:13px;font-weight:600;
-  letter-spacing:.17em;text-indent:.17em;text-transform:uppercase;
-  background:var(--cinnabar);color:var(--bone);
-  border:1px solid var(--cinnabar);padding:13px 26px;cursor:pointer;
-  border-radius:0;transition:background .18s cubic-bezier(.2,.7,.3,1);
-}
-button:hover{background:transparent;color:var(--cinnabar)}
-.kayit .durum{
-  margin:15px 0 0;font-size:15px;min-height:1.5em;color:var(--ink-2);
-}
-.kayit .durum.hata{color:var(--cinnabar)}
+/* ── erken erişim: koyu bant ── */
+.kayit{background:#0f172a;color:#e2e8f0;padding:80px 0;text-align:center}
+.kayit h2{color:#f8fafc}
+.kayit p{color:#94a3b8;max-width:56ch;margin:0 auto 16px}
+.kayit .usul{font-size:13px;color:#7c8aa3}
+.kayit form{display:flex;gap:8px;max-width:480px;margin:28px auto 0}
+.kayit input{flex:1;min-width:0;padding:12px 16px;border:1px solid #33425e;border-radius:var(--r);
+  background:#111a2c;color:#e2e8f0;font:15px/22px var(--body)}
+.kayit input::placeholder{color:#64748b}
+.kayit input:focus{outline:none;border-color:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,.2)}
+.kayit .dugme{background:#10b981;color:#052e22}
+.kayit .dugme:hover{background:#34d399}
+.durum{min-height:1.5em;margin-top:12px!important;font-size:14px;color:#6ee7b7!important}
+.durum.hata{color:#f87171!important}
+.kayit .ihtar{margin-top:40px;padding-top:24px;border-top:1px solid #243049;font-size:13px;
+  line-height:21px;color:#94a3b8}
+.kayit .ihtar b{color:#e2e8f0}
 
-/* ── uyarı ── */
-.ihtar{
-  border-top:1px solid var(--rule);margin-top:34px;padding-top:22px;
-  font-size:15px;color:var(--ink-2);max-width:62ch;line-height:1.6;
-}
-.ihtar b{color:var(--ink);font-weight:600}
+footer{padding:32px 0;border-top:1px solid var(--rule);background:var(--surface)}
+.ayak-ic{display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;align-items:center}
+footer nav{display:flex;gap:8px 24px;flex-wrap:wrap}
+footer a{font-size:14px;color:var(--ink-2);text-decoration:none}
+footer a:hover{color:var(--secondary);text-decoration:underline}
+.telif{font-size:13px;color:var(--muted)}
 
-/* ── ayak ── */
-footer{margin-top:60px;padding:22px 0 54px;border-top:1px solid var(--rule)}
-.ayak-ic{
-  display:flex;flex-wrap:wrap;gap:14px 30px;
-  align-items:baseline;justify-content:space-between;
+@media(max-width:900px){
+  header nav{display:none}.serit{justify-content:space-between}
+  section{padding:56px 0}
+  .folio{grid-template-columns:1fr}
+  .karsit,.izgara,.fiyat{grid-template-columns:1fr}
+  .rakamlar{grid-template-columns:1fr;gap:20px}
+  h2{font-size:26px;line-height:34px}
+  .kayit form{flex-direction:column}
 }
-.ayak-ic nav{display:flex;flex-wrap:wrap;gap:10px 22px}
-.ayak-ic a{color:var(--ink-2);text-decoration:none;font-size:14.5px}
-.ayak-ic a:hover{color:var(--cinnabar);text-decoration:underline}
-.ayak-ic .telif{font-size:14px;color:var(--bronze)}
-
-/* açılış hareketi: tek orkestralı an */
-@media (prefers-reduced-motion:no-preference){
-  .ac{opacity:0;transform:translateY(9px);
-    animation:bel .72s cubic-bezier(.16,.84,.3,1) forwards}
-  .ac:nth-child(1){animation-delay:.04s}
-  .g1{animation-delay:.04s}.g2{animation-delay:.13s}
-  .g3{animation-delay:.22s}.g4{animation-delay:.31s}
-  @keyframes bel{to{opacity:1;transform:none}}
-}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<!--
-THESIS: Bu sayfa bir avukatın iş gününü sayfanın omurgası yapar; kategori
-standardı olan "özellik kartları ızgarası"nı reddeder. Ürün, iddia edilmeden
-önce çalışırken gösterilir.
-OWN-WORLD: Rubrika — kemik zemin (#f2ede3), yalnız rubrik işlevli zincifre
-(#b0301c), Cinzel kapitalis + Source Serif 4, sıfır yarıçap, gölge yok,
-imza çift cetvel; sayfa boyunca inen tek dikey cetvel çizgisi (el yazması
-öncesi çekilen ruling), üzerinde kırmızı nişanlar.
-STORY: Ziyaretçi uydurma içtihat korkusuyla gelir; ilk ekranda gerçek bir
-soruya gerçek madde metninden atıflı cevap görür; cetvelden inerek işinin
-her adımını bulur; erken erişim listesine yazılır.
-FIRST VIEWPORT: Çift cetvelli üst şerit (marka solda, ERKEN ERİŞİM eylemi
-sağda); solda dikey cetvel başlar; başlık 15ch genişlikte Cinzel; altında tez
-cümlesi ve kırmızı birincil eylem; hemen ardından örnek folio — rubrik soru,
-[1][2][3] atıflı cevap, LOCUS VERIFICATUS satırı, sağ marjda glossa.
-FORM: Süreç cetveli; kendi sıralamamda 5. sıradaydı, dış zarla atandı
-(concept-seed.mjs çıktı vermedi, ikame açıkça bildirildi).
-FINISH: unreviewed and undocumented is unfinished; this build ends with the
-finish review, the verdict, and DESIGN.md
--->
-
 <header>
-  <div class="kap">
-    <div class="cift"></div>
-    <div class="serit">
-      <a class="marka" href="./">DIGESTA</a>
-      <nav>
-        <a href="#nasil">Nasıl çalışır</a>
-        <a href="#kulliyat">Külliyat</a>
-        <a href="#fiyat">Fiyat</a>
-      </nav>
-      <a class="eylem" href="#erken">Erken erişim</a>
-    </div>
-  </div>
-</header>
-
-<main class="kap">
-<div class="gövde">
-
-  <!-- ── açılış: tez + ürünün kendini göstermesi ── -->
-  <section class="blok acilis">
-    <span class="nisan" aria-hidden="true"></span>
-    <h1 class="ac g1">Atfı olmayan cevap, cevap değildir.</h1>
-    <p class="tez ac g2">Digesta, Türk mevzuatı ve içtihadı üzerinde çalışan bir
-      araştırma aletidir. Her hukuki tespit gerçek madde metnine bağlanır ve
-      <b>atıf sunucuda doğrulanır</b>. Doğrulanamayan cevap size
-      doğrulanmamış olarak gösterilir.</p>
-    <div class="giris-eylem ac g3">
-      <a class="dugme" href="#erken">Erken erişim listesi</a>
-      <span class="yan-not">Yayına hazırlanıyor · avukatlar için</span>
-    </div>
-    <nav class="mobil-yol" aria-label="Sayfa bölümleri">
+  <div class="kap serit">
+    <a class="marka" href="./" aria-label="Digesta ana sayfa">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" fill="none" aria-hidden="true"><rect width="52" height="52" rx="12" fill="#0F172A"/><path d="M26 14V38" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/><path d="M17 20H35" stroke="#F8FAFC" stroke-width="2.5" stroke-linecap="round"/><path d="M17 20L13 28C13 31 21 31 21 28L17 20Z" fill="#10B981" fill-opacity="0.2" stroke="#10B981" stroke-width="1.8" stroke-linejoin="round"/><path d="M35 20L31 28C31 31 39 31 39 28L35 20Z" fill="#10B981" fill-opacity="0.2" stroke="#10B981" stroke-width="1.8" stroke-linejoin="round"/><circle cx="26" cy="14" r="2.5" fill="#F59E0B"/><path d="M20 38H32" stroke="#F8FAFC" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <span><b>DIGESTA</b><i>LEGAL INTELLIGENCE</i></span>
+    </a>
+    <nav>
       <a href="#nasil">Nasıl çalışır</a>
       <a href="#kulliyat">Külliyat</a>
       <a href="#fiyat">Fiyat</a>
     </nav>
+    <a class="dugme" href="#erken">Erken erişim</a>
+  </div>
+</header>
 
-    <div class="folio ac g4">
-      <p class="etiket">Örnek folio — gerçek külliyat metniyle</p>
-      <h2 class="rubrik">Kiracı yazılı tahliye taahhüdü verdiği hâlde
-        taşınmazı boşaltmıyor. Hangi yolu izlemeliyim?</h2>
-      <div class="metin">
-        <p>Kiracı, kiralananın tesliminden sonra belli bir tarihte boşaltmayı
-        <b>yazılı olarak</b> üstlenmiş ve boşaltmamışsa, kiraya veren sözleşmeyi
-        <b>bu tarihten başlayarak bir ay içinde</b> icraya başvurarak veya dava
-        açarak sona erdirebilir.<span class="atif">[1]</span> Bir aylık süre hak
-        düşürücüdür; kaçırılırsa taahhüde dayanılamaz.</p>
-        <p>İcra yolu seçilirse sözleşme icra dairesine ibraz edilir; icra memuru
-        tahliye emri tebliğ ederek taşınmazın <b>on beş gün</b> içinde
-        boşaltılmasını emreder.<span class="atif">[2]</span> Kiracı yedi gün
-        içinde itiraz ederse takip durur; bu hâlde icra mahkemesinden itirazın
-        kaldırılması istenir. İtirazın kaldırılabilmesi için taahhüdün
-        <b>noterlikçe düzenlenmiş ya da imzası onaylanmış</b> olması veya kiracı
-        tarafından ikrar edilmiş olması aranır.<span class="atif">[3]</span></p>
+<main>
+  <!-- ── açılış: tez + ürünün kendini göstermesi ── -->
+  <section class="acilis">
+    <div class="kap">
+      <span class="chip"><span class="ms">verified</span>Atıf sunucuda doğrulanır</span>
+      <h1>Atfı olmayan cevap, <em>cevap değildir.</em></h1>
+      <p class="tez">Digesta, Türk mevzuatı ve içtihadı üzerinde çalışan bir araştırma
+        aletidir. Her hukuki tespit gerçek madde metnine bağlanır ve
+        <b>atıf sunucuda doğrulanır</b>. Doğrulanamayan cevap size doğrulanmamış
+        olarak gösterilir.</p>
+      <div class="giris-eylem">
+        <a class="dugme yesil" href="#erken">Erken erişim listesi <span class="ms">arrow_forward</span></a>
+        <a class="dugme hayalet" href="#nasil">Nasıl çalışır</a>
       </div>
-      <p class="verif">✓ Locus verificatus · 3 kaynak doğrulandı</p>
-      <aside class="glossa">
-        <h4>Glossa</h4>
-        <dl>
-          <dt>[1]</dt>
-          <dd><em>Türk Borçlar Kanunu m. 352</em>Kiracıdan kaynaklanan sebeplerle
-            sona erme; yazılı boşaltma üstlenimi.</dd>
-          <dt>[2]</dt>
-          <dd><em>İcra ve İflas Kanunu m. 272</em>Mukavelename ile kiralanan
-            taşınmazın tahliyesi; tahliye emri.</dd>
-          <dt>[3]</dt>
-          <dd><em>İcra ve İflas Kanunu m. 275</em>İtirazın kaldırılması;
-            noterlikçe düzenlenmiş veya imzası tasdikli mukavele şartı.</dd>
-        </dl>
-      </aside>
-    </div>
+      <span class="yan-not">Yayına hazırlanıyor · avukatlar için</span>
 
-    <div class="karsit">
-      <span class="etiket">Kaynak bulunamadığında</span>
-      <p class="rubrik">Müvekkilim kripto varlığını miras olarak bırakabilir mi?
-        Tereke nasıl paylaştırılır?</p>
-      <p class="metin">Külliyatta bu soruyu karşılayan bir hüküm ya da karar
-        bulunamadı. Cevap üretilir, ancak <b>kaynağa bağlanamadığı için
-        doğrulanmamış olarak damgalanır</b>: metin size gelir, güvence gelmez.</p>
-      <p class="verif yok">— doğrulanmış kaynak atfı yok, ihtiyatla değerlendirin —</p>
+      <div class="pencere" role="img" aria-label="Digesta sohbet ekranı: atıflı ve doğrulanmış örnek cevap">
+        <div class="bar"><i></i><i></i><i></i><span>Örnek — gerçek külliyat metniyle</span></div>
+        <div class="folio">
+          <div>
+            <p class="soru">Kiracı yazılı tahliye taahhüdü verdiği hâlde taşınmazı
+              boşaltmıyor. Hangi yolu izlemeliyim?</p>
+            <div class="cevap">
+              <p>Kiracı, kiralananın tesliminden sonra belli bir tarihte boşaltmayı
+                <b>yazılı olarak</b> üstlenmiş ve boşaltmamışsa, kiraya veren sözleşmeyi
+                <b>bu tarihten başlayarak bir ay içinde</b> icraya başvurarak veya dava
+                açarak sona erdirebilir.<span class="atif"> [1]</span> Bir aylık süre hak
+                düşürücüdür; kaçırılırsa taahhüde dayanılamaz.</p>
+              <p>İcra yolu seçilirse sözleşme icra dairesine ibraz edilir; icra memuru
+                tahliye emri tebliğ ederek taşınmazın <b>on beş gün</b> içinde
+                boşaltılmasını emreder.<span class="atif"> [2]</span> Kiracı yedi gün
+                içinde itiraz ederse takip durur; bu hâlde icra mahkemesinden itirazın
+                kaldırılması istenir. İtirazın kaldırılabilmesi için taahhüdün
+                <b>noterlikçe düzenlenmiş ya da imzası onaylanmış</b> olması veya kiracı
+                tarafından ikrar edilmiş olması aranır.<span class="atif"> [3]</span></p>
+            </div>
+            <span class="verif"><span class="ms" style="font-size:14px">check</span>Doğrulandı · 3 kaynak</span>
+          </div>
+          <aside class="glossa">
+            <h4><span class="ms">menu_book</span>Dayanak &amp; atıflar</h4>
+            <div class="madde"><span class="no">1</span><strong>Türk Borçlar Kanunu m. 352</strong>Kiracıdan kaynaklanan sebeplerle sona erme; yazılı boşaltma üstlenimi.</div>
+            <div class="madde"><span class="no">2</span><strong>İcra ve İflas Kanunu m. 272</strong>Mukavelename ile kiralanan taşınmazın tahliyesi; tahliye emri.</div>
+            <div class="madde"><span class="no">3</span><strong>İcra ve İflas Kanunu m. 275</strong>İtirazın kaldırılması; noterlikçe düzenlenmiş veya imzası tasdikli mukavele şartı.</div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── doğrulanmış / doğrulanmamış ── -->
+  <section>
+    <div class="kap">
+      <div class="bolum-bas">
+        <div class="ust">Neden güvenilir</div>
+        <h2>Ürün, iddia edilmeden önce çalışırken gösterilir</h2>
+        <p>İki durumu da saklamıyoruz: kaynağı olan cevap damgalanır, kaynağı olmayan da
+          açıkça işaretlenir.</p>
+      </div>
+      <div class="karsit">
+        <div class="kart dik">
+          <span class="chip"><span class="ms">verified</span>Doğrulanmış</span>
+          <h3>Kaynağa bağlanan cevap</h3>
+          <p>Model cevabı yazarken atıf verdiği her maddeyi sunucu <b>metniyle
+            karşılaştırır</b>. Karşılığı bulunan atıf damgalanır; cevabın altında kaç
+            kaynağa dayandığı görünür.</p>
+          <div class="ornek"><span class="verif"><span class="ms" style="font-size:14px">check</span>Doğrulandı · 3 kaynak</span></div>
+        </div>
+        <div class="kart uyari">
+          <span class="chip bronz"><span class="ms">warning</span>Doğrulanamadı</span>
+          <h3>Kaynak bulunamadığında</h3>
+          <p>Külliyatta karşılığı olmayan soruda cevap üretilir, ancak <b>kaynağa
+            bağlanamadığı için doğrulanmamış olarak damgalanır</b>: metin size gelir,
+            güvence gelmez.</p>
+          <div class="ornek">“Müvekkilim kripto varlığını miras olarak bırakabilir mi? Tereke nasıl paylaştırılır?”<br>
+            <span class="verif yok" style="margin-top:8px">doğrulanmış kaynak atfı yok, ihtiyatla değerlendirin</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ── istasyonlar: avukatın iş günü ── -->
-  <section class="blok istasyonlar" id="nasil">
-    <p class="bolum-basi">Bir dosyanın yolu</p>
-
-    <div class="istasyon">
-      <span class="nisan" aria-hidden="true"></span>
-      <div class="no">I</div>
-      <div>
-        <h3>Soruyu sor</h3>
-        <p>Serbest cümleyle sorarsınız. Cevap yalnız yüklü külliyattan gelir;
-          dışarıdan bilgi karışmaz.</p>
+  <section id="nasil" style="background:var(--surface-2)">
+    <div class="kap">
+      <div class="bolum-bas">
+        <div class="ust">Bir dosyanın yolu</div>
+        <h2>Avukatın iş gününün beş adımı</h2>
+        <p>Soru sormaktan süre hesabına kadar, aynı külliyat ve aynı doğrulama.</p>
       </div>
-      <div class="kanit">
-        <span class="bas">Doğrulama nasıl işliyor</span>
-        Model cevabı yazarken atıf verdiği her maddeyi sunucu <b>metniyle
-        karşılaştırır</b>. Karşılığı bulunmayan atıf düşürülür ve folio
-        "doğrulanmamış" damgasıyla gelir. Uydurma içtihat bu yüzden bir
-        ihtimal değil, kapalı bir kapıdır.
-      </div>
-    </div>
-
-    <div class="istasyon">
-      <span class="nisan" aria-hidden="true"></span>
-      <div class="no">II</div>
-      <div>
-        <h3>Emsal ara</h3>
-        <p>Kendi külliyatınızın yanında resmî arşivlerde arar; bulduğunuz kararı
-          tek tıkla külliyata katarsınız.</p>
-      </div>
-      <div class="kanit">
-        <span class="bas">Taranan kaynaklar</span>
-        <ul>
-          <li>Yargıtay ve Danıştay kararları (Bedesten arşivi)</li>
-          <li>Anayasa Mahkemesi bireysel başvuru kararları</li>
-          <li>İstinaf (bölge adliye) kararları</li>
-        </ul>
-        Katılan her karar bir sonraki soruda kaynak olarak kullanılabilir hâle
-        gelir: külliyat çalıştıkça büyür.
-      </div>
-    </div>
-
-    <div class="istasyon">
-      <span class="nisan" aria-hidden="true"></span>
-      <div class="no">III</div>
-      <div>
-        <h3>Dilekçe taslağını çıkar</h3>
-        <p>Olayı anlatırsınız, taslak madde atıflarıyla gelir. Word olarak
-          iner; biçimlendirmeyle uğraşmazsınız.</p>
-      </div>
-      <div class="kanit">
-        <span class="bas">Çıktı biçimi</span>
-        A4, Times New Roman 12 punto, iki yana yaslı, 1,5 satır aralığı;
-        başlıklar kalın, kaynak atıfları metinde korunur. Doğrudan
-        <span class="sayi">.docx</span>: düzeltip mahkemeye verirsiniz.
-      </div>
-    </div>
-
-    <div class="istasyon">
-      <span class="nisan" aria-hidden="true"></span>
-      <div class="no">IV</div>
-      <div>
-        <h3>Sözleşmeyi incelet</h3>
-        <p>Karşı taraftan gelen metni yükler, riskli maddeleri ve eksik
-          hükümleri madde madde alırsınız.</p>
-      </div>
-      <div class="kanit">
-        <span class="bas">Dosya ekleri</span>
-        PDF, Word, Excel, görsel, ses ve video eklenebilir; ses ve videolar
-        çözümlenerek dosyanın geçmişine işlenir. Her ek bağlı olduğu dava
-        dosyasında durur.
-      </div>
-    </div>
-
-    <div class="istasyon">
-      <span class="nisan" aria-hidden="true"></span>
-      <div class="no">V</div>
-      <div>
-        <h3>Süreyi hesapla</h3>
-        <p>Tebliğ tarihini verirsiniz, son günü alırsınız. Hafta sonu ve resmî
-          tatiller hesaba katılır.</p>
-      </div>
-      <div class="kanit">
-        <span class="bas">Neden elle hesap riskli</span>
-        Son gün tatile denk gelirse süre ilk iş gününe uzar; dinî bayramlar
-        her yıl kayar. Hesap, yürürlükteki resmî ve dinî tatil takvimi
-        üzerinden yapılır ve hangi günlerin atlandığı gerekçesiyle gösterilir.
+      <div class="izgara">
+        <article class="ozellik">
+          <div class="ikon"><span class="ms">smart_toy</span></div>
+          <div class="no">I</div>
+          <h3>Soruyu sor</h3>
+          <p>Serbest cümleyle sorarsınız. Cevap yalnız yüklü külliyattan gelir; dışarıdan bilgi karışmaz.</p>
+          <div class="kanit"><span class="bas">Doğrulama nasıl işliyor</span>
+            Karşılığı bulunmayan atıf düşürülür ve cevap “doğrulanmamış” damgasıyla gelir.
+            Uydurma içtihat bu yüzden bir ihtimal değil, kapalı bir kapıdır.</div>
+        </article>
+        <article class="ozellik">
+          <div class="ikon"><span class="ms">gavel</span></div>
+          <div class="no">II</div>
+          <h3>Emsal ara</h3>
+          <p>Kendi külliyatınızın yanında resmî arşivlerde arar; bulduğunuz kararı tek tıkla külliyata katarsınız.</p>
+          <div class="kanit"><span class="bas">Taranan kaynaklar</span>
+            <ul>
+              <li>Yargıtay ve Danıştay kararları (Bedesten arşivi)</li>
+              <li>Anayasa Mahkemesi bireysel başvuru kararları</li>
+              <li>İstinaf (bölge adliye) kararları</li>
+            </ul>
+            Katılan her karar bir sonraki soruda kaynak olur: külliyat çalıştıkça büyür.</div>
+        </article>
+        <article class="ozellik">
+          <div class="ikon"><span class="ms">edit_document</span></div>
+          <div class="no">III</div>
+          <h3>Dilekçe taslağını çıkar</h3>
+          <p>Olayı anlatırsınız, taslak madde atıflarıyla gelir. Word olarak iner; biçimlendirmeyle uğraşmazsınız.</p>
+          <div class="kanit"><span class="bas">Çıktı biçimi</span>
+            A4, Times New Roman 12 punto, iki yana yaslı, 1,5 satır aralığı; başlıklar
+            kalın, kaynak atıfları metinde korunur. Doğrudan <b>.docx</b>: düzeltip
+            mahkemeye verirsiniz.</div>
+        </article>
+        <article class="ozellik">
+          <div class="ikon"><span class="ms">policy</span></div>
+          <div class="no">IV</div>
+          <h3>Sözleşmeyi incelet</h3>
+          <p>Karşı taraftan gelen metni yükler, riskli maddeleri ve eksik hükümleri madde madde alırsınız.</p>
+          <div class="kanit"><span class="bas">Dosya ekleri</span>
+            PDF, Word, Excel, görsel, ses ve video eklenebilir; ses ve videolar çözümlenerek
+            dosyanın geçmişine işlenir. Her ek bağlı olduğu dava dosyasında durur.</div>
+        </article>
+        <article class="ozellik">
+          <div class="ikon"><span class="ms">calculate</span></div>
+          <div class="no">V</div>
+          <h3>Süreyi hesapla</h3>
+          <p>Tebliğ tarihini verirsiniz, son günü alırsınız. Hafta sonu ve resmî tatiller hesaba katılır.</p>
+          <div class="kanit"><span class="bas">Neden elle hesap riskli</span>
+            Son gün tatile denk gelirse süre ilk iş gününe uzar; dinî bayramlar her yıl kayar.
+            Hesap, yürürlükteki resmî ve dinî tatil takvimi üzerinden yapılır ve hangi
+            günlerin atlandığı gerekçesiyle gösterilir.</div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ── külliyat ── -->
-  <section class="blok" id="kulliyat">
-    <span class="nisan" aria-hidden="true"></span>
-    <h2 class="rubrik kul-baslik">
-      Mevzuat kendiliğinden güncel kalır.</h2>
-    <p class="kul-giris">
-      Kanun metinleri her gün mevzuat.gov.tr ile karşılaştırılır. Değişen kanun
-      yeniden işlenir ve size değiştiği bildirilir; eski metinden cevap
-      almazsınız. Kanunların birbirine yaptığı göndermeler atıf haritasında
-      görülür.</p>
-    <div class="olcu">
-      <div><div class="rakam">71</div><div class="ad">kanun, madde bazında
-        bölünmüş</div></div>
-      <div><div class="rakam">14.508</div><div class="ad">aranabilir madde ve
-        karar parçası</div></div>
-      <div><div class="rakam">Günlük</div><div class="ad">resmî kaynakla
-        eşitleme</div></div>
+  <section id="kulliyat">
+    <div class="kap kul">
+      <div class="ust">Külliyat</div>
+      <h2>Mevzuat kendiliğinden güncel kalır.</h2>
+      <p>Kanun metinleri her gün mevzuat.gov.tr ile karşılaştırılır. Değişen kanun yeniden
+        işlenir ve size değiştiği bildirilir; eski metinden cevap almazsınız. Kanunların
+        birbirine yaptığı göndermeler atıf haritasında görülür.</p>
     </div>
   </section>
+  <div class="bant">
+    <div class="kap rakamlar">
+      <div><div class="rakam">71</div><div class="rakam-ad">kanun, madde bazında bölünmüş</div></div>
+      <div><div class="rakam">14.508</div><div class="rakam-ad">aranabilir madde ve karar parçası</div></div>
+      <div><div class="rakam">Günlük</div><div class="rakam-ad">resmî kaynakla eşitleme</div></div>
+    </div>
+  </div>
 
   <!-- ── fiyat ── -->
-  <section class="blok" id="fiyat">
-    <span class="nisan" aria-hidden="true"></span>
-    <p class="bolum-basi">Fiyat</p>
-    <div class="fiyat">
-      <div class="berat">
-        <div class="ad">Deneme</div>
-        <div class="bedel">Ücretsiz</div>
-        <p>Kayıt olunca 20 sorgu. Kart istenmez.</p>
+  <section id="fiyat">
+    <div class="kap">
+      <div class="bolum-bas">
+        <div class="ust">Fiyat</div>
+        <h2>Şeffaf fiyat, sürpriz yok</h2>
       </div>
-      <div class="berat">
-        <div class="ad">Aylık</div>
-        <div class="bedel">1.490 <small>₺ / ay</small></div>
-        <p>Ayda 500 sorgu. Tüm özellikler açık; istediğiniz zaman
-          bırakırsınız.</p>
-      </div>
-      <div class="berat">
-        <div class="ad">Yıllık</div>
-        <div class="bedel">14.900 <small>₺ / yıl</small></div>
-        <p>Aynı kota, iki ay bedelsiz. Ödeme iyzico üzerinden alınır; kart
-          bilgisi Digesta sunucusuna uğramaz.</p>
+      <div class="fiyat">
+        <div class="berat">
+          <div class="ad">Deneme</div>
+          <div class="bedel">Ücretsiz</div>
+          <p>Kayıt olunca 20 sorgu. Kart istenmez.</p>
+        </div>
+        <div class="berat one">
+          <div class="ad">Aylık</div>
+          <div class="bedel">1.490 <small>₺ / ay</small></div>
+          <p>Ayda 500 sorgu. Tüm özellikler açık; istediğiniz zaman bırakırsınız.</p>
+        </div>
+        <div class="berat">
+          <div class="ad">Yıllık</div>
+          <div class="bedel">14.900 <small>₺ / yıl</small></div>
+          <p>Aynı kota, iki ay bedelsiz. Ödeme iyzico üzerinden alınır; kart bilgisi Digesta sunucusuna uğramaz.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── erken erişim ── -->
-  <section class="blok kayit" id="erken">
-    <span class="nisan acik" aria-hidden="true"></span>
-    <h2>Yayına girdiğinde ilk siz haberdar olun</h2>
-    <p>Digesta şu anda kapalı denemede. Adresinizi bırakın; açıldığında tek bir
-      e-posta göndereceğiz. Başka hiçbir şey için kullanılmaz.</p>
-    <p class="usul">Bu sitenin sunucusu yok: “Haber ver” dediğinizde adresiniz
-      kendi posta programınızda hazır bir iletiye konur, göndermesi size kalır.
-      Böylece adresiniz araya giren hiçbir servise uğramaz.</p>
-    <form id="kayitForm" novalidate>
-      <label for="eposta" class="gizli">E-posta adresiniz</label>
-      <input type="email" id="eposta" name="eposta" placeholder="ornek@buro.av.tr"
-             autocomplete="email" required>
-      <button type="submit">Haber ver</button>
-    </form>
-    <p class="durum" id="durum" role="status" aria-live="polite"></p>
-    <noscript>
-      <p class="durum"><a href="mailto:destek@digesta.com.tr?subject=Digesta%20erken%20eri%C5%9Fim">
-        destek@digesta.com.tr adresine yazın</a> — tarayıcınızda JavaScript kapalı.</p>
-    </noscript>
-
-    <p class="ihtar">
-      <b>Digesta hukuki danışmanlık vermez.</b> Ürettiği metinler bir meslek
-      mensubunun denetiminden geçmeden kullanılmamalıdır; avukatın kullandığı
-      bir alettir, yerine geçmez.
-    </p>
+  <section class="kayit" id="erken">
+    <div class="kap">
+      <h2>Yayına girdiğinde ilk siz haberdar olun</h2>
+      <p>Digesta şu anda kapalı denemede. Adresinizi bırakın; açıldığında tek bir
+        e-posta göndereceğiz. Başka hiçbir şey için kullanılmaz.</p>
+      <p class="usul">Bu sitenin sunucusu yok: “Haber ver” dediğinizde adresiniz kendi posta
+        programınızda hazır bir iletiye konur, göndermesi size kalır. Böylece adresiniz
+        araya giren hiçbir servise uğramaz.</p>
+      <form id="kayitForm" novalidate>
+        <label for="eposta" class="gizli">E-posta adresiniz</label>
+        <input type="email" id="eposta" name="eposta" placeholder="ornek@buro.av.tr"
+               autocomplete="email" required>
+        <button type="submit" class="dugme">Haber ver</button>
+      </form>
+      <p class="durum" id="durum" role="status" aria-live="polite"></p>
+      <noscript>
+        <p class="durum"><a href="mailto:destek@digesta.com.tr?subject=Digesta%20erken%20eri%C5%9Fim">
+          destek@digesta.com.tr adresine yazın</a> — tarayıcınızda JavaScript kapalı.</p>
+      </noscript>
+      <p class="ihtar"><b>Digesta hukuki danışmanlık vermez.</b> Ürettiği metinler bir meslek
+        mensubunun denetiminden geçmeden kullanılmamalıdır; avukatın kullandığı bir alettir,
+        yerine geçmez.</p>
+    </div>
   </section>
-
-</div>
 </main>
 
 <footer>
@@ -627,7 +470,7 @@ finish review, the verdict, and DESIGN.md
       <a href="./yasal/mesafeli-satis/">Mesafeli Satış</a>
       <a href="./yasal/iade/">Teslimat ve İade</a>
     </nav>
-    <span class="telif">Digesta · Türk hukuku külliyatı</span>
+    <span class="telif">Digesta Legal Intelligence · Türk hukuku külliyatı</span>
   </div>
 </footer>
 
